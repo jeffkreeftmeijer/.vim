@@ -1,3 +1,6 @@
+" Use Dim as the default color scheme
+colorscheme dim
+
 " Disable 'sensible' in vim-polyglot when using NeoVim to prevent[^1] polyglot
 " from setting NeoVim's already-sensible defaults[^2] again.
 "
