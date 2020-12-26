@@ -4,7 +4,6 @@
 [submodule "pack/plugins/start/vim-dim"]
 	path = pack/plugins/start/vim-dim
 	url = git@github.com:jeffkreeftmeijer/vim-dim.git
-<<<<<<< HEAD
 [submodule "pack/plugins/start/vim-numbertoggle"]
 	path = pack/plugins/start/vim-numbertoggle
 	url = git@github.com:jeffkreeftmeijer/vim-numbertoggle.git
