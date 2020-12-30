@@ -16,6 +16,9 @@ if has('nvim')
   let g:polyglot_disabled = ['sensible']
 endif
 
+" Install coc.nvim plugins
+let g:coc_global_extensions = ['coc-elixir']
+
 " Use netrw's tree view
 let g:netrw_liststyle = 3
 " Hide netrw's help banner (toggle with I)
