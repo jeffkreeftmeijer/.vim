@@ -22,5 +22,3 @@ let g:netrw_liststyle = 3
 let g:netrw_banner = 0
 " Open files in the previous split
 let g:netrw_browse_split = 4
-
-let g:coc_data_home = "~/.vim/coc"
