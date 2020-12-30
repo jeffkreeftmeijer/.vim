@@ -1,6 +1,12 @@
 " Use Dim as the default color scheme
 colorscheme dim
 
+" Set both number and relativenumber for "hybrid" number mode[^1].
+"
+" [^1]: https://jeffkreeftmeijer.com/vim-number#hybrid-line-numbers
+set number
+set relativenumber
+
 " Disable 'sensible' in vim-polyglot when using NeoVim to prevent[^1] polyglot
 " from setting NeoVim's already-sensible defaults[^2] again.
 "
