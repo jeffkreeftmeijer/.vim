@@ -16,6 +16,16 @@ if has('nvim')
   let g:polyglot_disabled = ['sensible']
 endif
 
+" Install coc.nvim plugins
+let g:coc_global_extensions = ['coc-elixir']
+
+" Use <TAB> to toggle completion suggestions
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 " Use netrw's tree view
 let g:netrw_liststyle = 3
 " Hide netrw's help banner (toggle with I)
