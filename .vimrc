@@ -7,6 +7,9 @@ colorscheme dim
 set number
 set relativenumber
 
+" Don't wrap lines
+set nowrap
+
 " Disable 'sensible' in vim-polyglot when using NeoVim to prevent[^1] polyglot
 " from setting NeoVim's already-sensible defaults[^2] again.
 "
