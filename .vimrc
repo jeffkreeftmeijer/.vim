@@ -1,5 +1,5 @@
-" Use Dim as the default color scheme
-colorscheme dim
+" Use Grim as the default color scheme
+colorscheme grim
 
 " Set both number and relativenumber for "hybrid" number mode[^1].
 "
