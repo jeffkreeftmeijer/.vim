@@ -20,7 +20,7 @@ if has('nvim')
 endif
 
 " Install coc.nvim plugins
-let g:coc_global_extensions = ['coc-elixir']
+let g:coc_global_extensions = ['coc-elixir', 'coc-rls']
 
 " Use <TAB> to toggle completion suggestions
 inoremap <silent><expr> <TAB>
