@@ -22,6 +22,9 @@ endif
 " Install coc.nvim plugins
 let g:coc_global_extensions = ['coc-elixir', 'coc-rls']
 
+" Store coc configuration in ~/.vim
+let g:coc_config_home = $HOME . "/.vim/"
+
 " Use <TAB> to toggle completion suggestions
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
