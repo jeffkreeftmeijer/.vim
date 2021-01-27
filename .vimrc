@@ -31,10 +31,3 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" Use netrw's tree view
-let g:netrw_liststyle = 3
-" Hide netrw's help banner (toggle with I)
-let g:netrw_banner = 0
-" Open files in the previous split
-let g:netrw_browse_split = 4
