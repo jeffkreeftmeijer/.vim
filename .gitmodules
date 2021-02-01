@@ -26,3 +26,9 @@
 [submodule "pack/plugins/start/fzf"]
 	path = pack/plugins/start/fzf
 	url = git@github.com:junegunn/fzf.git
+[submodule "pack/plugins/start/vim-test"]
+	path = pack/plugins/start/vim-test
+	url = git@github.com:vim-test/vim-test.git
+[submodule "pack/plugins/start/vim-dispatch"]
+	path = pack/plugins/start/vim-dispatch
+	url = git@github.com:tpope/vim-dispatch.git
