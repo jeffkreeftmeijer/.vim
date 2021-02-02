@@ -1,3 +1,3 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["elixir", "html", "rust"]
+  "coc.preferences.formatOnSaveFiletypes": ["elixir", "html", "json", "jsonc", "rust", "typescript"]
 }
