@@ -20,7 +20,7 @@ if has('nvim')
 endif
 
 " Install coc.nvim plugins
-let g:coc_global_extensions = ['coc-elixir', 'coc-rls', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-elixir', 'coc-html', 'coc-rls', 'coc-vimlsp']
 
 " Store coc configuration in ~/.vim
 let g:coc_config_home = $HOME . "/.vim/"
