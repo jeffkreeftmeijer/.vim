@@ -1,36 +1,10 @@
-" Use Grim as the default color scheme
-colorscheme grim
-
-" Set both number and relativenumber for "hybrid" number mode[^1].
-"
-" [^1]: https://jeffkreeftmeijer.com/vim-number#hybrid-line-numbers
-set number
-set relativenumber
-
-" Don't wrap lines
-set nowrap
-
-" Disable 'sensible' in vim-polyglot when using NeoVim to prevent[^1] polyglot
-" from setting NeoVim's already-sensible defaults[^2] again.
-"
-" [^1]: https://github.com/sheerun/vim-polyglot/blob/73c518717741fb3ebb6822645d38f37ffae7c19b/plugin/polyglot.vim#L20
-" [^2]: https://github.com/neovim/neovim/issues/2676
-if has('nvim')
-  let g:polyglot_disabled = ['sensible']
+" Download plug.vim if it doesn't exist yet
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 endif
 
-" Install coc.nvim plugins
-let g:coc_global_extensions = ['coc-elixir', 'coc-html', 'coc-json', 'coc-rls', 'coc-tsserver', 'coc-vimlsp', 'coc-solargraph']
-
-" Store coc configuration in ~/.vim
-let g:coc_config_home = $HOME . "/.vim/"
-
-" Use <TAB> to toggle completion suggestions
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-" test-vim
-let test#strategy = "dispatch"
+" Run PlugInstall if there are missing plugins
+autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
+  \| PlugInstall --sync | source $MYVIMRC
+\| endif
