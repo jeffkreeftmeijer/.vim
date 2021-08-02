@@ -59,4 +59,57 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 
 All other plugins are installed through vim-plug.
 
+** Installing packages
+
+#+begin_note
+This configuration is built to support both Vim and NeoVim.
+It keeps its configuration files in Vim's traditional locations, so the configuration is in =~/.vimrc=, and Vim's home directory is =~/.vim=, instead of NeoVim's =~/.config/vim/init.vim= and =~/.config/vim=.
+This works because NeoVim falls back to Vim's defaults, so it reads configuration from both places. 
+
+However, this causes an error when trying to install plugins, as Vim doesn't automatically load vim-plug:
+
+#+begin_example
+Error detected while processing /Users/jeffkreeftmeijer/.config/nvim/init.vim:
+line   15:
+E117: Unknown function: plug#begin
+line   17:
+E492: Not an editor command: Plug 'sheerun/vim-polyglot'
+line   19:
+E117: Unknown function: plug#end
+Error detected while processing VimEnter Autocommands for "*":
+E121: Undefined variable: g:plugs
+Press ENTER or type command to continue
+#+end_example
+
+Although NeoVim loads the configuration from =~/.vimrc=, it doesn't add =~/.vim= to the runtime path automatically, meaning the =plug.vim= file in the =~/.vim/autoload= directory is not loaded when trying to define a list of plugins to install.
+
+This configuration adds =~/.vimrc= to the runtime path /before/ the vim-plug block to remedy that:
+
+#+caption: =~/.vimrc=
+#+begin_src vimrc :tangle .vimrc
+  " Add ~/.vim to the runtime path
+  set runtimepath +=~/.vim
+#+end_src
+#+end_note
+
+To install plugins with vim-plug, call the =Plug= function inside the plug-block:
+
+#+begin_src vimrc :eval no
+  call plug#begin()
+  
+  " TODO Add plugins
+  
+  call plug#end()
+#+end_src
+
+The =plug#begin()= function sets up the plugin directory (this configuration uses the default directory: =~/.vim/plugged=) and the =plug#end()= function initializes the plugin system.
+
+To install a plugin, call the =Plug= function /inside/ the plug-block with an URL to a git repository:
+
+#+begin_src vimrc :eval no
+  Plug 'tpope/vim-commentary'
+#+end_src
+
+The =user/repository= assumes the plugin is hosted on GitHub.
+
 [fn:plugins-dir]: The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.

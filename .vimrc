@@ -8,3 +8,6 @@ endif
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source $MYVIMRC
 \| endif
+
+" Add ~/.vim to the runtime path
+set runtimepath +=~/.vim
