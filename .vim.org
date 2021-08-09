@@ -176,6 +176,7 @@ This configuration includes three packages installed with vim-plug:
   <<numbertoggle>>
   <<tpope>>
   <<coc>>
+  <<fzf>>
   
   call plug#end()
 #+end_src
@@ -286,7 +287,16 @@ Finally, use =<cr>= to select the topmost option during completion:
   inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
 #+end_src
 
-** fzf.vim
+** Fzf.vim
+
+[[https://github.com/junegunn/fzf.vim][Fzf]].vim is a Vim plugin for the fzf command-line fuzzy finder.
+It provides the =:Files=, =:Buffers= and =:Rg= commands to find and filter files, buffers, and lines, respectively.
+
+#+name: fzf
+#+begin_src vimrc
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+#+end_src
 
 [fn:plugins-dir] The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.
 [fn:default-plug-dir] Vim-plug uses the =~/.config/nvim/plugged= directory by default, but passing a different path to =plug#begin()= overwrites the plugin directory.
