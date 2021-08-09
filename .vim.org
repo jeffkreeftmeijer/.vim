@@ -21,6 +21,9 @@ This document is the current revision.
 #+toc: headlines
 
 * NeoVim
+:PROPERTIES:
+:CUSTOM_ID: neovim
+:END:
 
 Recent versions of Vim caught up to most features NeoVim introduced, like true color support, background jobs and the inline terminal.
 However, NeoVim comes with [[https://github.com/neovim/neovim/issues/2676][sensible defaults]] out of the box by implementing most of [[https://github.com/tpope/vim-sensible][vim-sensible]] by default.
@@ -29,6 +32,9 @@ As a good starting point, either install Vim both and vim-sensible, or NeoVim.
 This configuration chooses the latter.
 
 ** Installation
+:PROPERTIES:
+:CUSTOM_ID: installation
+:END:
 
 #+headers: :cache yes
 #+headers: :results output
@@ -55,6 +61,9 @@ This configuration chooses the latter.
 : NVIM v0.5.0
 
 ** Setup
+:PROPERTIES:
+:CUSTOM_ID: setup
+:END:
 
 Vim uses =~/.vimrc= as its configuration file, and =~/.vim= as its home directory, while NeoVim opts for =~/.config/nvim/init.vim= and =~/.config/nvim=.
 This configuration is checked out in =~/.vim= (which matches Vim's home directory), and uses =~/.vim/.vimrc= as its configuration file.
@@ -95,6 +104,9 @@ Press ENTER or type command to continue
 
 
 * Package management
+:PROPERTIES:
+:CUSTOM_ID: package-management
+:END:
 
 Vim 8 and NeoVim have a native package manager, which loads plugins from the =~/.vim/pack/plugins/start= directory[fn:plugins-dir].
 To install a package, clone its repository into =~/.vim/pack/plugins/start=:
@@ -123,6 +135,9 @@ The plugins themselves are configured through a list of calls to the =Plug= func
 This configuration uses the latter in an attempt to contain most of the configuration in a single file.
 
 ** Vim-plug
+:PROPERTIES:
+:CUSTOM_ID: vim-plug
+:END:
 
 [[https://github.com/junegunn/vim-plug#vim][Vim-plug's documentation]] mentions installing the plugin into the autoload directory directly by running a script that downloads =plug.org= to the =~/.vim/autoload= directory:
 
@@ -156,6 +171,9 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 All other plugins are installed through vim-plug.
 
 ** Installing packages
+:PROPERTIES:
+:CUSTOM_ID: installing-packages
+:END:
 
 To install plugins with vim-plug, call the =Plug= function inside the plug-block:
 
@@ -178,6 +196,9 @@ To install a plugin, call the =Plug= function /inside/ the plug-block with an UR
 The =user/repository= assumes the plugin is hosted on GitHub.
 
 * Packages
+:PROPERTIES:
+:CUSTOM_ID: packages
+:END:
 
 This configuration includes three packages installed with vim-plug:
 
@@ -196,6 +217,9 @@ This configuration includes three packages installed with vim-plug:
 #+end_src
 
 ** Polyglot
+:PROPERTIES:
+:CUSTOM_ID: polyglot
+:END:
 
 [[https://github.com/sheerun/vim-polyglot][Polyglot]] is a curated and frequently updated list [[https://github.com/sheerun/vim-polyglot#language-packs][list of more than 600 language packs]][fn:polyglot-add] to auto-load syntax highlighting and indentation rules.
 Although the packs are downloaded on install, they're loaded on demand, so using Polyglot does not affect Vim's startup time.
@@ -210,6 +234,9 @@ For example, [[https://github.com/sheerun/vim-polyglot/pull/655][this pull reque
 #+end_src
 
 ** Dim
+:PROPERTIES:
+:CUSTOM_ID: dim
+:END:
 
 Vim's default color scheme uses hardcoded color values (comments and some keywords are light blue, for example) that ignore the terminal's set ANSI colors.
 [[https://github.com/jeffkreeftmeijer/vim-dim][Dim]] is a clone of Vim's default colorscheme, with some improvements.
@@ -233,6 +260,9 @@ After installing Dim, use it as the default colorscheme by setting =colorscheme=
 #+end_src
 
 ** Nightfall
+:PROPERTIES:
+:CUSTOM_ID: nightfall
+:END:
 
 [[https://github.com/jeffkreeftmeijer/vim-nightfall][Nightfall]] automatically switches Vim's =bg= between "dark" and "light" based on macOS's dark mode.
 
@@ -242,6 +272,9 @@ After installing Dim, use it as the default colorscheme by setting =colorscheme=
 #+end_src
 
 ** Surround.vim and commentary.vim
+:PROPERTIES:
+:CUSTOM_ID: surround-and-commentary
+:END:
 
 [[https://github.com/tpope][Tim Pope]]'s plugins are a staple of most Vim configurations.
 This configuration includes Tim's [[https://github.com/tpope/vim-surround][surround.vim]] and [[https://github.com/tpope/vim-commentary][commentary.vim]] for working with surroundings and comments.
@@ -258,6 +291,9 @@ Press =gcc= to comment out a line and =gc= to comment out a selection.
 #+end_src
 
 ** Vim-numbertoggle
+:PROPERTIES:
+:CUSTOM_ID: vim-numbertoggle
+:END:
 
 Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybrid" line numbers]] to help with locating lines in a file, and moving between files quickly.
 [[https://github.com/jeffkreeftmeijer/vim-numbertoggle][Vim-numbertoggle]] is a plugin that automatically switches between absolute and hybrid line numbers when switching between normal and insert mode, or when Vim loses focus.
@@ -275,6 +311,9 @@ Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybri
 #+end_src
 
 ** Coc.nvim
+:PROPERTIES:
+:CUSTOM_ID: coc
+:END:
 
 [[https://github.com/neoclide/coc.nvim][Coc.nvim]] is a language server plugin to add code completion, inline documentation and compiler checks.
 
@@ -302,6 +341,9 @@ Finally, use =<cr>= to select the topmost option during completion:
 #+end_src
 
 ** Fzf.vim
+:PROPERTIES:
+:CUSTOM_ID: fzf
+:END:
 
 [[https://github.com/junegunn/fzf.vim][Fzf]].vim is a Vim plugin for the fzf command-line fuzzy finder.
 It provides the =:Files=, =:Buffers= and =:Rg= commands to find and filter files, buffers, and lines, respectively.
