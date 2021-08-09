@@ -2,8 +2,11 @@
 :ID:       4E2E6F0C-7921-4292-8530-E499362D9433
 :END:
 #+title: ~/.vim
+#+author: Jeff Kreeftmeijer
+#+html_path: /.vim/
 #+date: 2010-07-06
-#+OPTIONS: toc:nil
+#+description: Jeff Kreeftmeijer's Vim configuration
+#+options: toc:nil
 
 In my time using Vim, I switched between MacVim, regular Vim and NeoVim, project drawers and fuzzy file finding, Janus and custom configurations, and so on.
 My current configuration is a result of that journey which tries to stay light on plugins and key mapping, while still providing a somewhat modern editor configuration.
