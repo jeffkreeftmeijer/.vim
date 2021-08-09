@@ -157,5 +157,21 @@ For example, [[https://github.com/sheerun/vim-polyglot/pull/655][this pull reque
   Plug 'sheerun/vim-polyglot'
 #+end_src
 
+** Dim
+
+** vim-nightfall
+
+** vim-surround
+
+** vim-commentary
+
+** vim-numbertoggle
+
+[[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][Vim's absolute, relative and hybrid line numbers]]
+
+** coc.nvim
+
+** fzf.vim
+
 [fn:plugins-dir] The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.
 [fn:default-plug-dir] Vim-plug uses the =~/.vim/plugged= directory by default, but passing a different path to =plug#begin()= overwrites the plugin directory.
