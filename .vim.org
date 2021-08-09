@@ -146,14 +146,14 @@ This configuration adds =~/.vimrc= to the runtime path /before/ the vim-plug blo
 To install plugins with vim-plug, call the =Plug= function inside the plug-block:
 
 #+begin_src vimrc :eval no
-  call plug#begin()
+  call plug#begin("~/.vim/plugged")
   
   " TODO Add plugins
   
   call plug#end()
 #+end_src
 
-The =plug#begin()= function sets up the plugin directory[fn:default-plug-dir] and the =plug#end()= function initializes the plugin system.
+The =plug#begin("~/.vim/plugged")= function sets up the plugin directory[fn:default-plug-dir] and the =plug#end()= function initializes the plugin system.
 
 To install a plugin, call the =Plug= function /inside/ the plug-block with an URL to a git repository:
 
@@ -168,7 +168,7 @@ The =user/repository= assumes the plugin is hosted on GitHub.
 This configuration includes three packages installed with vim-plug:
 
 #+begin_src vimrc :tangle .vimrc :noweb yes
-  call plug#begin()
+  call plug#begin("~/.vim/plugged")
   
   <<polyglot>>
   <<dim>>
@@ -263,4 +263,4 @@ Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybri
 ** fzf.vim
 
 [fn:plugins-dir] The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.
-[fn:default-plug-dir] Vim-plug uses the =~/.vim/plugged= directory by default, but passing a different path to =plug#begin()= overwrites the plugin directory.
+[fn:default-plug-dir] Vim-plug uses the =~/.config/nvim/plugged= directory by default, but passing a different path to =plug#begin()= overwrites the plugin directory.

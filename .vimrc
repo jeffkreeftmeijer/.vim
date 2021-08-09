@@ -12,7 +12,7 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " Add ~/.vim to the runtime path
 set runtimepath +=~/.vim
 
-call plug#begin()
+call plug#begin("~/.vim/plugged")
 
 Plug 'sheerun/vim-polyglot'
 Plug 'jeffkreeftmeijer/vim-dim'
