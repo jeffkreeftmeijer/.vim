@@ -15,5 +15,9 @@ set runtimepath +=~/.vim
 call plug#begin()
 
 Plug 'sheerun/vim-polyglot'
+Plug 'jeffkreeftmeijer/vim-dim'
 
 call plug#end()
+
+" Use Dim as the default color scheme
+colorscheme dim

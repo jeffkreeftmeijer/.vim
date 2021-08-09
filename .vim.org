@@ -165,12 +165,13 @@ The =user/repository= assumes the plugin is hosted on GitHub.
 
 * Packages
 
-This configuration includes 1 package installed with vim-plug:
+This configuration includes two packages installed with vim-plug:
 
 #+begin_src vimrc :tangle .vimrc :noweb yes
   call plug#begin()
   
   <<polyglot>>
+  <<dim>>
   
   call plug#end()
 #+end_src
@@ -190,6 +191,27 @@ For example, [[https://github.com/sheerun/vim-polyglot/pull/655][this pull reque
 #+end_src
 
 ** Dim
+
+Vim's default color scheme uses hardcoded color values (comments and some keywords are light blue, for example) that ignore the terminal's set ANSI colors.
+[[https://github.com/jeffkreeftmeijer/vim-dim][Dim]] is a clone of Vim's default colorscheme, with some improvements.
+It only uses ANSI colors, so specific color values are [[https://jeffkreeftmeijer.com/vim-16-color][configured in the terminal emulator]] instead of in Vim itself.
+
+Dim's syntax highlighting is consistent to prevent color shifts between dark and light backgrounds.
+It also makes sure to use /dimmed/ colors for comments and other non-code elements, to help distinguishing code from everything else.
+
+#+name: dim
+#+begin_src vimrc
+  Plug 'jeffkreeftmeijer/vim-dim'
+#+end_src
+
+After installing Dim, use it as the default colorscheme by setting =colorscheme= in =~/.vimrc=:
+
+#+caption: =~/.vimrc=, setting the default colorscheme
+#+headers: :tangle .vimrc
+#+begin_src vimrc
+  " Use Dim as the default color scheme
+  colorscheme dim
+#+end_src
 
 ** vim-nightfall
 
