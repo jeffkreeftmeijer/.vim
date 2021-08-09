@@ -124,12 +124,12 @@ This configuration includes 1 package installed with vim-plug:
   call plug#end()
 #+end_src
 
-** Vim-polyglot
+** Polyglot
 
-[[https://github.com/sheerun/vim-polyglot][Vim-polyglot]] is a curated and frequently updated list [[https://github.com/sheerun/vim-polyglot#language-packs][list of more than 600 language packs]][fn:polyglot-add] to auto-load syntax highlighting and indentation rules.
-Although the packs are downloaded on install, they're loaded on demand, so using vim-polyglot does not affect Vim's startup time.
+[[https://github.com/sheerun/vim-polyglot][Polyglot]] is a curated and frequently updated list [[https://github.com/sheerun/vim-polyglot#language-packs][list of more than 600 language packs]][fn:polyglot-add] to auto-load syntax highlighting and indentation rules.
+Although the packs are downloaded on install, they're loaded on demand, so using Polyglot does not affect Vim's startup time.
 
-[fn:polyglot-add] Vim-polyglot should have all languages you need.
+[fn:polyglot-add] Polyglot should have all languages you need.
 For language packs that aren't yet included, add them by sending a pull request.
 For example, [[https://github.com/sheerun/vim-polyglot/pull/655][this pull request]] adds support for [[https://gleam.run][Gleam]] through [[https://github.com/gleam-lang/gleam.vim][gleam.vim.]]
 
