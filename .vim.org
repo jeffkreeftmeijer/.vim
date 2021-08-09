@@ -1,4 +1,4 @@
-* Packages
+* Package management
 
 Vim 8 has a native package manager, which loads plugins from the =~/.vim/pack/plugins/start= directory[fn:plugins-dir].
 To install a package, clone its repository into =~/.vim/pack/plugins/start=:
