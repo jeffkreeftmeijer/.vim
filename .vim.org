@@ -64,7 +64,32 @@ To support both Vim and NeoVim, symlink both =~/.vimrc= and =~/.config/nvim/init
   ln -s ~/.vim/.vimrc ~/.config/nvim/init.vim
 #+end_src
 
+This causes NeoVim to load the configuration from =~/.vimrc=, but it doesn't add =~/.vim= to the runtime path automatically, meaning files in the =~/.vim/autoload= directory are not loaded when using NeoVim.[fn:unknown-plug]
+This configuration adds =~/.vimrc= to the runtime path /before/ the vim-plug block to remedy that:
+
+#+caption: =~/.vimrc=, adding the =~/.vim= directory to the runtime path
+#+begin_src vimrc :tangle .vimrc
+  " Add ~/.vim to the runtime path
+  set runtimepath +=~/.vim
+#+end_src
+
 #+RESULTS:
+
+[fn:unknown-plug] Failing to add =~/.vim= to the runtime path causes the following error when loading the rest of the configuration:
+
+#+begin_example
+Error detected while processing /Users/jeffkreeftmeijer/.config/nvim/init.vim:
+line   15:
+E117: Unknown function: plug#begin
+line   17:
+E492: Not an editor command: Plug 'sheerun/vim-polyglot'
+line   19:
+E117: Unknown function: plug#end
+Error detected while processing VimEnter Autocommands for "*":
+E121: Undefined variable: g:plugs
+Press ENTER or type command to continue
+#+end_example
+
 
 * Package management
 
@@ -128,37 +153,6 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 All other plugins are installed through vim-plug.
 
 ** Installing packages
-
-#+begin_note
-This configuration is built to support both Vim and NeoVim.
-It keeps its configuration files in Vim's traditional locations, so the configuration is in =~/.vimrc=, and Vim's home directory is =~/.vim=, instead of NeoVim's =~/.config/vim/init.vim= and =~/.config/vim=.
-This works because NeoVim falls back to Vim's defaults, so it reads configuration from both places.
-
-However, this causes an error when trying to install plugins, as Vim doesn't automatically load vim-plug:
-
-#+begin_example
-Error detected while processing /Users/jeffkreeftmeijer/.config/nvim/init.vim:
-line   15:
-E117: Unknown function: plug#begin
-line   17:
-E492: Not an editor command: Plug 'sheerun/vim-polyglot'
-line   19:
-E117: Unknown function: plug#end
-Error detected while processing VimEnter Autocommands for "*":
-E121: Undefined variable: g:plugs
-Press ENTER or type command to continue
-#+end_example
-
-Although NeoVim loads the configuration from =~/.vimrc=, it doesn't add =~/.vim= to the runtime path automatically, meaning the =plug.vim= file in the =~/.vim/autoload= directory is not loaded when trying to define a list of plugins to install.
-
-This configuration adds =~/.vimrc= to the runtime path /before/ the vim-plug block to remedy that:
-
-#+caption: =~/.vimrc=, adding the =~/.vim= directory to the runtime path
-#+begin_src vimrc :tangle .vimrc
-  " Add ~/.vim to the runtime path
-  set runtimepath +=~/.vim
-#+end_src
-#+end_note
 
 To install plugins with vim-plug, call the =Plug= function inside the plug-block:
 
