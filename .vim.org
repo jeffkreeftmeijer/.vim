@@ -25,6 +25,8 @@ However, NeoVim comes with [[https://github.com/neovim/neovim/issues/2676][sensi
 As a good starting point, either install Vim both and vim-sensible, or NeoVim.
 This configuration chooses the latter.
 
+** Installation
+
 #+headers: :cache yes
 #+headers: :results output
 #+headers: :prologue brew uninstall neovim > /dev/null
@@ -39,7 +41,7 @@ This configuration chooses the latter.
 : Already downloaded: /Users/jeffkreeftmeijer/Library/Caches/Homebrew/downloads/5e5a426fbb645f1c4a8c3b26c138ae8e8298c4b73a8e7969bae1fe0e6a2ba507--neovim--0.5.0.catalina.bottle.tar.gz
 : ==> Pouring neovim--0.5.0.catalina.bottle.tar.gz
 : 🍺  /usr/local/Cellar/neovim/0.5.0: 1,543 files, 21.2MB
-  
+
 #+headers: :exports both
 #+headers: :results output
 #+begin_src shell
@@ -48,6 +50,19 @@ This configuration chooses the latter.
 
 #+RESULTS:
 : NVIM v0.5.0
+
+** Setup
+
+Vim uses =~/.vimrc= as its configuration file, and =~/.vim= as its home directory, while NeoVim opts for =~/.config/nvim/init.vim= and =~/.config/nvim=.
+This configuration is checked out in =~/.vim= (which matches Vim's home directory), and uses =~/.vim/.vimrc= as its configuration file.
+
+To support both Vim and NeoVim, symlink both =~/.vimrc= and =~/.config/nvim/init.vim= to =~/.vim/.vimrc=:
+
+#+begin_src shell
+  mkdir -p ~/.config/nvim
+  ln -s ~/.vim/.vimrc ~/.vimrc
+  ln -s ~/.vim/.vimrc ~/.config/nvim/init.vim
+#+end_src
 
 * Package management
 
