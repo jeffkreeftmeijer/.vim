@@ -1,3 +1,8 @@
+:PROPERTIES:
+:ID:       4E2E6F0C-7921-4292-8530-E499362D9433
+:END:
+#+title: ~/.vim
+
 * Package management
 
 Vim 8 has a native package manager, which loads plugins from the =~/.vim/pack/plugins/start= directory[fn:plugins-dir].
