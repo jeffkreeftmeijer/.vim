@@ -1,3 +1,6 @@
+" Add ~/.vim to the runtime path
+set runtimepath +=~/.vim
+
 " Download plug.vim if it doesn't exist yet
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -8,9 +11,6 @@ endif
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source ~/.vimrc
 \| endif
-
-" Add ~/.vim to the runtime path
-set runtimepath +=~/.vim
 
 call plug#begin("~/.vim/plugged")
 
