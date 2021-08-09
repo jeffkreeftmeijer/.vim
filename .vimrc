@@ -17,6 +17,8 @@ call plug#begin()
 Plug 'sheerun/vim-polyglot'
 Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 

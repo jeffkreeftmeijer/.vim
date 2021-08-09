@@ -173,6 +173,7 @@ This configuration includes three packages installed with vim-plug:
   <<polyglot>>
   <<dim>>
   <<numbertoggle>>
+  <<tpope>>
   
   call plug#end()
 #+end_src
@@ -216,9 +217,21 @@ After installing Dim, use it as the default colorscheme by setting =colorscheme=
 
 ** vim-nightfall
 
-** vim-surround
+** Surround.vim and commentary.vim
 
-** vim-commentary
+[[https://github.com/tpope][Tim Pope]]'s plugins are a staple of most Vim configurations.
+This configuration includes Tim's [[https://github.com/tpope/vim-surround][surround.vim]] and [[https://github.com/tpope/vim-commentary][commentary.vim]] for working with surroundings and comments.
+
+The former enables =s=, allowing for =ci"= to replace the contents of a double-quoted string, among many [[https://github.com/tpope/vim-surround#readme][other examples]].
+
+The latter adds quick commenting.
+Press =gcc= to comment out a line and =gc= to comment out a selection.
+
+#+name: tpope
+#+begin_src vimrc
+  Plug 'tpope/vim-surround'
+  Plug 'tpope/vim-commentary'
+#+end_src
 
 ** Vim-numbertoggle
 
