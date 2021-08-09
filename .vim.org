@@ -17,9 +17,41 @@ This document is the current revision.
 
 #+toc: headlines
 
+* NeoVim
+
+Recent versions of Vim caught up to most features NeoVim introduced, like true color support, background jobs and the inline terminal.
+However, NeoVim comes with [[https://github.com/neovim/neovim/issues/2676][sensible defaults]] out of the box by implementing most of [[https://github.com/tpope/vim-sensible][vim-sensible]] by default.
+
+As a good starting point, either install Vim both and vim-sensible, or NeoVim.
+This configuration chooses the latter.
+
+#+headers: :cache yes
+#+headers: :results output
+#+headers: :prologue brew uninstall neovim > /dev/null
+#+begin_src shell
+  brew install neovim
+#+end_src
+
+#+RESULTS[5c5fde03521443ab0ae71daa9659f8d7955d6088]:
+: ==> Downloading https://ghcr.io/v2/homebrew/core/neovim/manifests/0.5.0
+: Already downloaded: /Users/jeffkreeftmeijer/Library/Caches/Homebrew/downloads/7720be5c43b475c91b5ae8b501f18845a1d36959250cba180975f35495243c99--neovim-0.5.0.bottle_manifest.json
+: ==> Downloading https://ghcr.io/v2/homebrew/core/neovim/blobs/sha256:13d31cb537237f3b9245c6c2de0e55ae4d7730d06742aec5a3e98a5365934eae
+: Already downloaded: /Users/jeffkreeftmeijer/Library/Caches/Homebrew/downloads/5e5a426fbb645f1c4a8c3b26c138ae8e8298c4b73a8e7969bae1fe0e6a2ba507--neovim--0.5.0.catalina.bottle.tar.gz
+: ==> Pouring neovim--0.5.0.catalina.bottle.tar.gz
+: 🍺  /usr/local/Cellar/neovim/0.5.0: 1,543 files, 21.2MB
+  
+#+headers: :exports both
+#+headers: :results output
+#+begin_src shell
+  nvim --version | head -n1
+#+end_src
+
+#+RESULTS:
+: NVIM v0.5.0
+
 * Package management
 
-Vim 8 has a native package manager, which loads plugins from the =~/.vim/pack/plugins/start= directory[fn:plugins-dir].
+Vim 8 and NeoVim have a native package manager, which loads plugins from the =~/.vim/pack/plugins/start= directory[fn:plugins-dir].
 To install a package, clone its repository into =~/.vim/pack/plugins/start=:
 
 #+begin_src shell :eval no
