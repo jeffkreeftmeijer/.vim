@@ -172,6 +172,7 @@ This configuration includes three packages installed with vim-plug:
   
   <<polyglot>>
   <<dim>>
+  <<nightfall>>
   <<numbertoggle>>
   <<tpope>>
   
@@ -215,7 +216,14 @@ After installing Dim, use it as the default colorscheme by setting =colorscheme=
   colorscheme dim
 #+end_src
 
-** vim-nightfall
+** Nightfall
+
+[[https://github.com/jeffkreeftmeijer/vim-nightfall][Nightfall]] automatically switches Vim's =bg= between "dark" and "light" based on macOS's dark mode.
+
+#+name: nightfall
+#+begin_src vimrc
+  Plug 'jeffkreeftmeijer/vim-nightfall'
+#+end_src
 
 ** Surround.vim and commentary.vim
 
