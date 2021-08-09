@@ -18,7 +18,7 @@ Instead of cloning, add a plugin as a submodule:
 Another option for installing plugins is using a plugin manager like [[https://github.com/junegunn/vim-plug][vim-plug]].
 Instead of using Git checkouts or submodules, vim-plug handles the installing and updating of plugins.
 
-The plugins themselves are configured through a list of calls to the =Plug= in the =~/.vimrc= file:
+The plugins themselves are configured through a list of calls to the =Plug= function in the =~/.vimrc= file:
 
 #+begin_src vimrc :eval no
   Plug 'tpope/vim-commentary'
@@ -37,7 +37,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 
 Instead, to have Vim install vim-plug on startup (again, to contain the configuration to a single file), this snippet automatically downloads =plug.vim= from its repository if it doesn't exist yet:
 
-#+caption: =~/.vimrc=
+#+caption: =~/.vimrc=, downloading and installing vim-plug
 #+begin_src vimrc :tangle .vimrc
   " Download plug.vim if it doesn't exist yet
   if empty(glob('~/.vim/autoload/plug.vim'))
@@ -49,7 +49,7 @@ Instead, to have Vim install vim-plug on startup (again, to contain the configur
 Normally, plugins are installed when calling =:PlugInstall= from within Vim.
 To remove an extra step from the setup, this configuration runs a script on startup that checks for missing packages on startup and install them if needed:
 
-#+caption: =~/.vimrc=
+#+caption: =~/.vimrc=, automatically installing plugins when starting Vim
 #+begin_src vimrc :tangle .vimrc
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
@@ -64,7 +64,7 @@ All other plugins are installed through vim-plug.
 #+begin_note
 This configuration is built to support both Vim and NeoVim.
 It keeps its configuration files in Vim's traditional locations, so the configuration is in =~/.vimrc=, and Vim's home directory is =~/.vim=, instead of NeoVim's =~/.config/vim/init.vim= and =~/.config/vim=.
-This works because NeoVim falls back to Vim's defaults, so it reads configuration from both places. 
+This works because NeoVim falls back to Vim's defaults, so it reads configuration from both places.
 
 However, this causes an error when trying to install plugins, as Vim doesn't automatically load vim-plug:
 
@@ -85,7 +85,7 @@ Although NeoVim loads the configuration from =~/.vimrc=, it doesn't add =~/.vim=
 
 This configuration adds =~/.vimrc= to the runtime path /before/ the vim-plug block to remedy that:
 
-#+caption: =~/.vimrc=
+#+caption: =~/.vimrc=, adding the =~/.vim= directory to the runtime path
 #+begin_src vimrc :tangle .vimrc
   " Add ~/.vim to the runtime path
   set runtimepath +=~/.vim
@@ -102,7 +102,7 @@ To install plugins with vim-plug, call the =Plug= function inside the plug-block
   call plug#end()
 #+end_src
 
-The =plug#begin()= function sets up the plugin directory (this configuration uses the default directory: =~/.vim/plugged=) and the =plug#end()= function initializes the plugin system.
+The =plug#begin()= function sets up the plugin directory[fn:default-plug-dir] and the =plug#end()= function initializes the plugin system.
 
 To install a plugin, call the =Plug= function /inside/ the plug-block with an URL to a git repository:
 
@@ -112,4 +112,5 @@ To install a plugin, call the =Plug= function /inside/ the plug-block with an UR
 
 The =user/repository= assumes the plugin is hosted on GitHub.
 
-[fn:plugins-dir]: The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.
+[fn:plugins-dir] The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.
+[fn:default-plug-dir] Vim-plug uses the =~/.vim/plugged= directory by default, but passing a different path to =plug#begin()= overwrites the plugin directory.
