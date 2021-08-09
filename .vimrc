@@ -16,8 +16,12 @@ call plug#begin()
 
 Plug 'sheerun/vim-polyglot'
 Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
 call plug#end()
 
 " Use Dim as the default color scheme
 colorscheme dim
+
+" Turn on line numbers
+:set number

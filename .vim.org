@@ -165,13 +165,14 @@ The =user/repository= assumes the plugin is hosted on GitHub.
 
 * Packages
 
-This configuration includes two packages installed with vim-plug:
+This configuration includes three packages installed with vim-plug:
 
 #+begin_src vimrc :tangle .vimrc :noweb yes
   call plug#begin()
   
   <<polyglot>>
   <<dim>>
+  <<numbertoggle>>
   
   call plug#end()
 #+end_src
@@ -219,9 +220,22 @@ After installing Dim, use it as the default colorscheme by setting =colorscheme=
 
 ** vim-commentary
 
-** vim-numbertoggle
+** Vim-numbertoggle
 
-[[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][Vim's absolute, relative and hybrid line numbers]]
+Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybrid" line numbers]] to help with locating lines in a file, and moving between files quickly.
+[[https://github.com/jeffkreeftmeijer/vim-numbertoggle][Vim-numbertoggle]] is a plugin that automatically switches between absolute and hybrid line numbers when switching between normal and insert mode, or when Vim loses focus.
+
+#+name: numbertoggle
+#+begin_src vimrc
+  Plug 'jeffkreeftmeijer/vim-numbertoggle'
+#+end_src
+
+#+caption: =~/.vimrc=, turning on line numbers
+#+headers: :tangle .vimrc
+#+begin_src vimrc
+  " Turn on line numbers
+  :set number
+#+end_src
 
 ** coc.nvim
 
