@@ -6,8 +6,14 @@ endif
 
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
+  \| PlugInstall --sync | source ~/.vimrc
 \| endif
 
 " Add ~/.vim to the runtime path
 set runtimepath +=~/.vim
+
+call plug#begin()
+
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
