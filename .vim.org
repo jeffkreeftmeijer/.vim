@@ -53,7 +53,7 @@ To remove an extra step from the setup, this configuration runs a script on star
 #+begin_src vimrc :tangle .vimrc
 " Run PlugInstall if there are missing plugins
 autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
-  \| PlugInstall --sync | source $MYVIMRC
+  \| PlugInstall --sync | source ~/.vimrc
 \| endif
 #+end_src
 
