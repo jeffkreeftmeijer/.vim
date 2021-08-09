@@ -2,6 +2,20 @@
 :ID:       4E2E6F0C-7921-4292-8530-E499362D9433
 :END:
 #+title: ~/.vim
+#+date: 2010-07-06
+#+OPTIONS: toc:nil
+
+In my time using Vim, I switched between MacVim, regular Vim and NeoVim, project drawers and fuzzy file finding, Janus and custom configurations, and so on.
+My current configuration is a result of that journey which tries to stay light on plugins and key mapping, while still providing a somewhat modern editor configuration.
+
+My [[http://github.com/jeffkreeftmeijer/.vim][Vim configuration]] is extracted from this document[fn:2010], meaning both should remain in sync.
+Unless I'm experimenting with something locally that I haven't pushed yet, this document describes the configuration I'm currently using in my editor.
+
+[fn:2010] Initially, this configuration didn't exist in this form, but I've published my Vim configuration in one way or another since 2010.
+This document is the current revision.
+
+
+#+toc: headlines
 
 * Package management
 
@@ -137,7 +151,6 @@ Although the packs are downloaded on install, they're loaded on demand, so using
 [fn:polyglot-add] Polyglot should have all languages you need.
 For language packs that aren't yet included, add them by sending a pull request.
 For example, [[https://github.com/sheerun/vim-polyglot/pull/655][this pull request]] adds support for [[https://gleam.run][Gleam]] through [[https://github.com/gleam-lang/gleam.vim][gleam.vim.]]
-
 
 #+name: polyglot
 #+begin_src vimrc :eval no
