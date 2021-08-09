@@ -175,6 +175,7 @@ This configuration includes three packages installed with vim-plug:
   <<nightfall>>
   <<numbertoggle>>
   <<tpope>>
+  <<coc>>
   
   call plug#end()
 #+end_src
@@ -258,7 +259,32 @@ Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybri
   :set number
 #+end_src
 
-** coc.nvim
+** Coc.nvim
+
+[[https://github.com/neoclide/coc.nvim][Coc.nvim]] is a language server plugin to add code completion, inline documentation and compiler checks.
+
+#+name: coc
+#+begin_src vimrc
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+#+end_src
+
+After installing Coc.nvim, set =g:coc_global_extensions= to add language server extensions for Elixir, Ruby, Rust, Typescript and VimL:
+
+#+caption: =~/.vimrc=, adding language server extensions
+#+headers: :tangle .vimrc
+#+begin_src vimrc
+  " Install Coc extensions for Elixir, Ruby, Rust, Typescript and VimL
+  let g:coc_global_extensions = ['coc-elixir', 'coc-solargraph', 'coc-rls', 'coc-tsserver', 'coc-vimlsp']
+#+end_src
+
+Finally, use =<cr>= to select the topmost option during completion:
+
+#+caption: =~/.vimrc=, setting up =<cr>= to select the topmost completion
+#+headers: :tangle .vimrc
+#+begin_src vimrc
+  " Use <cr> to select the first completion
+  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+#+end_src
 
 ** fzf.vim
 

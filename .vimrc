@@ -20,6 +20,7 @@ Plug 'jeffkreeftmeijer/vim-nightfall'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 
@@ -28,3 +29,9 @@ colorscheme dim
 
 " Turn on line numbers
 :set number
+
+" Install Coc extensions for Elixir, Ruby, Rust, Typescript and VimL
+let g:coc_global_extensions = ['coc-elixir', 'coc-solargraph', 'coc-rls', 'coc-tsserver', 'coc-vimlsp']
+
+" Use <cr> to select the first completion
+inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
