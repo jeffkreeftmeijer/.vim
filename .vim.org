@@ -309,7 +309,7 @@ Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybri
 #+headers: :tangle .vimrc
 #+begin_src vimrc
   " Turn on line numbers
-  :set number
+  set number
 #+end_src
 
 ** Coc.nvim

@@ -28,7 +28,7 @@ call plug#end()
 colorscheme dim
 
 " Turn on line numbers
-:set number
+set number
 
 " Install Coc extensions for Elixir, Ruby, Rust, Typescript and VimL
 let g:coc_global_extensions = ['coc-elixir', 'coc-solargraph', 'coc-rls', 'coc-tsserver', 'coc-vimlsp']
