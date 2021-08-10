@@ -298,7 +298,7 @@ Press =gcc= to comment out a line and =gc= to comment out a selection.
 :CUSTOM_ID: vim-numbertoggle
 :END:
 
-Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybrid" line numbers]] to help with locating lines in a file, and moving between files quickly.
+Vim has [[https://jeffkreeftmeijer.com/vim-number/][absolute, relative and "hybrid" line numbers]] to help with locating lines in a file, and moving between files quickly.
 [[https://github.com/jeffkreeftmeijer/vim-numbertoggle][Vim-numbertoggle]] is a plugin that automatically switches between absolute and hybrid line numbers when switching between normal and insert mode, or when Vim loses focus.
 
 #+name: plug-numbertoggle
@@ -374,3 +374,6 @@ It provides the =:Files=, =:Buffers= and =:Rg= commands to find and filter files
 # eval: (add-hook 'after-save-hook (lambda () (load "~/.emacs.d/hacks/ox-md-with-title.el") (org-gfm-export-to-markdown)) nil t)
 # eval: (add-hook 'after-save-hook (lambda () (org-babel-tangle)) nil t)
 # End:
+
+* Internal links                                                   :noexport:
+- [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][Vim's absolute, relative and hybrid line numbers]]
