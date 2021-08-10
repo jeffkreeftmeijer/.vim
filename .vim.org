@@ -336,6 +336,15 @@ After installing Coc.nvim, set =g:coc_global_extensions= to add language server 
   let g:coc_global_extensions = ['coc-elixir', 'coc-solargraph', 'coc-rls', 'coc-tsserver', 'coc-vimlsp']
 #+end_src
 
+Automatically format Elixir, Rust and Typescript files on save by setting =g:coc_user_config= instead of using Coc's default JSON configuration file:
+
+#+caption: =~/.vimrc=, adding languages to format on save
+#+headers: :tangle .vimrc
+#+begin_src vimrc
+  " Automatically format Elixir, Rust and Typescript files on save
+  let g:coc_user_config = {"coc.preferences.formatOnSaveFiletypes": ["elixir", "rust", "typescript"]}
+#+end_src
+
 Finally, use =<cr>= to select the topmost option during completion:
 
 #+caption: =~/.vimrc=, setting up =<cr>= to select the topmost completion

@@ -35,5 +35,8 @@ colorscheme dim
 " Install Coc extensions for Elixir, Ruby, Rust, Typescript and VimL
 let g:coc_global_extensions = ['coc-elixir', 'coc-solargraph', 'coc-rls', 'coc-tsserver', 'coc-vimlsp']
 
+" Automatically format Elixir, Rust and Typescript files on save
+let g:coc_user_config = {"coc.preferences.formatOnSaveFiletypes": ["elixir", "rust", "typescript"]}
+
 " Use <cr> to select the first completion
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
