@@ -11,7 +11,7 @@
 In my time using Vim, I switched between MacVim, regular Vim and NeoVim, project drawers and fuzzy file finding, Janus and custom configurations, and so on.
 My current configuration is a result of that journey which tries to stay light on plugins and key mapping, while still providing a somewhat modern editor configuration.
 
-My [[http://github.com/jeffkreeftmeijer/.vim][Vim configuration]] is extracted from this document[fn:2010], meaning both should remain in sync.
+My [[https://github.com/jeffkreeftmeijer/.vim/blob/main/.vimrc][=.vimrc= file]] is extracted from this document[fn:2010], meaning both should remain in sync.
 Unless I'm experimenting with something locally that I haven't pushed yet, this document describes the configuration I'm currently using in my editor.
 
 [fn:2010] Initially, this configuration didn't exist in this form, but I've published my Vim configuration in one way or another since 2010.
