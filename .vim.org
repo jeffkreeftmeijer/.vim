@@ -205,7 +205,6 @@ The vim-plug plugin block lists all nine:
 #+caption: =~/.vimrc=, listing all installed plugins
 #+begin_src vimrc :tangle .vimrc :noweb yes
   call plug#begin("~/.vim/plugged")
-  
   <<plug-polyglot>>
   <<plug-dim>>
   <<plug-nightfall>>
@@ -213,7 +212,6 @@ The vim-plug plugin block lists all nine:
   <<plug-tpope>>
   <<plug-coc>>
   <<plug-fzf>>
-  
   call plug#end()
 #+end_src
 
