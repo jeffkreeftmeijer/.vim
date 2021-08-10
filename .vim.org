@@ -6,6 +6,7 @@
 #+html_path: /.vim/
 #+date: 2010-07-06
 #+description: Jeff Kreeftmeijer's Vim configuration
+#+startup: fold
 #+options: toc:nil
 
 In my time using Vim, I switched between MacVim, regular Vim and NeoVim, project drawers and fuzzy file finding, Janus and custom configurations, and so on.
