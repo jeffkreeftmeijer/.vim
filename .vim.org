@@ -195,6 +195,25 @@ To install a plugin, call the =Plug= function /inside/ the plug-block with an UR
 
 The =user/repository= assumes the plugin is hosted on GitHub.
 
+* Clipboard
+:PROPERTIES:
+:CUSTOM_ID: clipboard
+:END:
+
+Vim uses the "unnamed" register as the clipboard when copying or deleting text from a buffer.
+To use the system clipboard, prefix the copy or delete command with ="*=.
+For example, to copy the current line to the system clipboard, use ="*yy=.
+
+To always use the system clipboard, append =unnamedplus= to the =clipboard= setting:
+
+#+caption: =~/.vimrc=, configuring Vim to always use the system clipboard
+#+begin_src vimrc :tangle .vimrc
+  " Always use the system clipboard
+  set clipboard+=unnamedplus
+#+end_src
+
+With this setting, =yy= copies the current line to the system clipboard, without needing to add the ="*= prefix.
+
 * Packages
 :PROPERTIES:
 :CUSTOM_ID: packages

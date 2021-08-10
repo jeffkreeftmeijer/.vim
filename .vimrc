@@ -12,6 +12,9 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
   \| PlugInstall --sync | source ~/.vimrc
 \| endif
 
+" Always use the system clipboard
+set clipboard+=unnamedplus
+
 call plug#begin("~/.vim/plugged")
 Plug 'sheerun/vim-polyglot'
 Plug 'jeffkreeftmeijer/vim-dim'
