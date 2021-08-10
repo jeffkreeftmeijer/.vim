@@ -205,13 +205,13 @@ This configuration includes three packages installed with vim-plug:
 #+begin_src vimrc :tangle .vimrc :noweb yes
   call plug#begin("~/.vim/plugged")
   
-  <<polyglot>>
-  <<dim>>
-  <<nightfall>>
-  <<numbertoggle>>
-  <<tpope>>
-  <<coc>>
-  <<fzf>>
+  <<plug-polyglot>>
+  <<plug-dim>>
+  <<plug-nightfall>>
+  <<plug-numbertoggle>>
+  <<plug-tpope>>
+  <<plug-coc>>
+  <<plug-fzf>>
   
   call plug#end()
 #+end_src
@@ -228,7 +228,8 @@ Although the packs are downloaded on install, they're loaded on demand, so using
 For language packs that aren't yet included, add them by sending a pull request.
 For example, [[https://github.com/sheerun/vim-polyglot/pull/655][this pull request]] adds support for [[https://gleam.run][Gleam]] through [[https://github.com/gleam-lang/gleam.vim][gleam.vim.]]
 
-#+name: polyglot
+
+#+name: plug-polyglot
 #+begin_src vimrc :eval no
   Plug 'sheerun/vim-polyglot'
 #+end_src
@@ -245,7 +246,7 @@ It only uses ANSI colors, so specific color values are [[https://jeffkreeftmeije
 Dim's syntax highlighting is consistent to prevent color shifts between dark and light backgrounds.
 It also makes sure to use /dimmed/ colors for comments and other non-code elements, to help distinguishing code from everything else.
 
-#+name: dim
+#+name: plug-dim
 #+begin_src vimrc
   Plug 'jeffkreeftmeijer/vim-dim'
 #+end_src
@@ -266,7 +267,7 @@ After installing Dim, use it as the default colorscheme by setting =colorscheme=
 
 [[https://github.com/jeffkreeftmeijer/vim-nightfall][Nightfall]] automatically switches Vim's =bg= between "dark" and "light" based on macOS's dark mode.
 
-#+name: nightfall
+#+name: plug-nightfall
 #+begin_src vimrc
   Plug 'jeffkreeftmeijer/vim-nightfall'
 #+end_src
@@ -284,7 +285,7 @@ The former enables =s=, allowing for =ci"= to replace the contents of a double-q
 The latter adds quick commenting.
 Press =gcc= to comment out a line and =gc= to comment out a selection.
 
-#+name: tpope
+#+name: plug-tpope
 #+begin_src vimrc
   Plug 'tpope/vim-surround'
   Plug 'tpope/vim-commentary'
@@ -298,7 +299,7 @@ Press =gcc= to comment out a line and =gc= to comment out a selection.
 Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybrid" line numbers]] to help with locating lines in a file, and moving between files quickly.
 [[https://github.com/jeffkreeftmeijer/vim-numbertoggle][Vim-numbertoggle]] is a plugin that automatically switches between absolute and hybrid line numbers when switching between normal and insert mode, or when Vim loses focus.
 
-#+name: numbertoggle
+#+name: plug-numbertoggle
 #+begin_src vimrc
   Plug 'jeffkreeftmeijer/vim-numbertoggle'
 #+end_src
@@ -317,7 +318,7 @@ Vim has [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][absolute, relative and "hybri
 
 [[https://github.com/neoclide/coc.nvim][Coc.nvim]] is a language server plugin to add code completion, inline documentation and compiler checks.
 
-#+name: coc
+#+name: plug-coc
 #+begin_src vimrc
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
 #+end_src
@@ -348,7 +349,7 @@ Finally, use =<cr>= to select the topmost option during completion:
 [[https://github.com/junegunn/fzf.vim][Fzf]].vim is a Vim plugin for the fzf command-line fuzzy finder.
 It provides the =:Files=, =:Buffers= and =:Rg= commands to find and filter files, buffers, and lines, respectively.
 
-#+name: fzf
+#+name: plug-fzf
 #+begin_src vimrc
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
