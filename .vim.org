@@ -199,8 +199,10 @@ The =user/repository= assumes the plugin is hosted on GitHub.
 :CUSTOM_ID: packages
 :END:
 
-This configuration includes three packages installed with vim-plug:
+This configuration consists of nine packages installed with vim-plug and configuration for some of the packages.
+The vim-plug plugin block lists all nine:
 
+#+caption: =~/.vimrc=, listing all installed plugins
 #+begin_src vimrc :tangle .vimrc :noweb yes
   call plug#begin("~/.vim/plugged")
   
@@ -214,6 +216,8 @@ This configuration includes three packages installed with vim-plug:
   
   call plug#end()
 #+end_src
+
+The rest of this section lists each plugin and describes its configuration.
 
 ** Polyglot
 :PROPERTIES:
