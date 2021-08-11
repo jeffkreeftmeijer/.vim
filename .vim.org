@@ -102,7 +102,8 @@ Vim 8 and NeoVim have a native package manager, which loads plugins from the =~/
 To install a package, clone its repository into =~/.vim/pack/plugins/start=:
 
 #+begin_src shell :eval no
-  git clone git@github.com:tpope/vim-commentary.git ~/.vim/pack/plugins/start/vim-commentary
+  git clone git@github.com:tpope/vim-commentary.git \
+    ~/.vim/pack/plugins/start/vim-commentary
 #+end_src
 
 When publishing dotfiles to a repository for reuse, it's convenient to use Git submodules instead of regular checkouts.
@@ -110,7 +111,8 @@ This allows for checking the dependencies into version control.
 Instead of cloning, add a plugin as a submodule:
 
 #+begin_src shell :eval no
-  git submodule add git@github.com:tpope/vim-commentary.git ~/.vim/pack/plugins/start/vim-commentary
+  git submodule add git@github.com:tpope/vim-commentary.git \
+    ~/.vim/pack/plugins/start/vim-commentary
 #+end_src
 
 Another option for installing plugins is using a plugin manager like [[https://github.com/junegunn/vim-plug][vim-plug]].
@@ -132,7 +134,7 @@ This configuration uses the latter in an attempt to contain most of the configur
 [[https://github.com/junegunn/vim-plug#vim][Vim-plug's documentation]] mentions installing the plugin into the autoload directory directly by running a script that downloads =plug.org= to the =~/.vim/autoload= directory:
 
 #+begin_src shell :eval no
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 #+end_src
 
