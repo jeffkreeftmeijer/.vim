@@ -388,11 +388,10 @@ It provides the =:Files=, =:Buffers= and =:Rg= commands to find and filter files
 [fn:plugins-dir] The name of the =start= directory in =~/.vim/pack/plugins/start= can be anything, but "start" seems to make sense.
 [fn:default-plug-dir] Vim-plug uses the =~/.config/nvim/plugged= directory by default, but passing a different path to =plug#begin()= overwrites the plugin directory.
 
+* Internal links                                                   :noexport:
+- [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][Vim's absolute, relative and hybrid line numbers]]
 
 # Local Variables:
 # eval: (add-hook 'after-save-hook (lambda () (load "~/.emacs.d/hacks/ox-md-with-title.el") (org-gfm-export-to-markdown)) nil t)
 # eval: (add-hook 'after-save-hook (lambda () (org-babel-tangle)) nil t)
 # End:
-
-* Internal links                                                   :noexport:
-- [[id:ABED24AB-F56D-4D23-BA8F-683BC6BB5831][Vim's absolute, relative and hybrid line numbers]]
