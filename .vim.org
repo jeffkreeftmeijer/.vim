@@ -76,10 +76,10 @@ This configuration is checked out in Vim's default home directory, which contain
 | NeoVim             | ~~/.config/nvim~ | ~~/.config/nvim/init.vim~ |
 | This configuration | ~~/.vim~         | ~~/.vim/.vimrc~           |
 
-To use this configuration, check it out to Vim's home directory path:
+To use this configuration, clone its repository to Vim's home directory path:
 
 #+begin_src shell
-  git checkout git@github.com:jeffkreeftmeijer/.vim.git ~/.vim
+  git clone git@github.com:jeffkreeftmeijer/.vim.git ~/.vim
 #+end_src
   
 To support NeoVim, symlink NeoVim's home directory and configuration file paths to Vim's:
