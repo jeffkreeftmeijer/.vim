@@ -29,7 +29,7 @@ This document is the current revision.
 Recent versions of Vim caught up to most features NeoVim introduced, like true color support, background jobs and the inline terminal.
 However, NeoVim comes with [[https://github.com/neovim/neovim/issues/2676][sensible defaults]] out of the box by implementing most of [[https://github.com/tpope/vim-sensible][vim-sensible]] by default.
 
-As a good starting point, either install Vim both and vim-sensible, or NeoVim.
+As a good starting point, either install both Vim and vim-sensible, or NeoVim.
 This configuration chooses the latter.
 
 ** Installation
