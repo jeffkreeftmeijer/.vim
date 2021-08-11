@@ -1,6 +1,3 @@
-" Add ~/.vim to the runtime path
-set runtimepath +=~/.vim
-
 " Download plug.vim if it doesn't exist yet
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs

@@ -66,42 +66,32 @@ This configuration chooses the latter.
 :CUSTOM_ID: setup
 :END:
 
-Vim uses =~/.vimrc= as its configuration file, and =~/.vim= as its home directory, while NeoVim opts for =~/.config/nvim/init.vim= and =~/.config/nvim=.
-This configuration is checked out in =~/.vim= (which matches Vim's home directory), and uses =~/.vim/.vimrc= as its configuration file.
+Vim and NeoVim use different locations for the configuration file and home directory.
+This configuration is checked out in Vim's default home directory, which contains the configuration file:
 
-To support both Vim and NeoVim, symlink both =~/.vimrc= and =~/.config/nvim/init.vim= to =~/.vim/.vimrc=:
+#+caption: Home directory and configuration file locations for Vim, NeoVim and this configuration
+|                    | home directory   | configuration file        |
+|--------------------+------------------+---------------------------|
+| Vim                | ~~/.vim~         | ~~/.vimrc~                |
+| NeoVim             | ~~/.config/nvim~ | ~~/.config/nvim/init.vim~ |
+| This configuration | ~~/.vim~         | ~~/.vim/.vimrc~           |
+
+To use this configuration, check it out to Vim's home directory path:
 
 #+begin_src shell
-  mkdir -p ~/.config/nvim
-  ln -s ~/.vim/.vimrc ~/.vimrc
-  ln -s ~/.vim/.vimrc ~/.config/nvim/init.vim
+  git checkout git@github.com:jeffkreeftmeijer/.vim.git ~/.vim
 #+end_src
-
-This causes NeoVim to load the configuration from =~/.vimrc=, but it doesn't add =~/.vim= to the runtime path automatically, meaning files in the =~/.vim/autoload= directory are not loaded when using NeoVim.[fn:unknown-plug]
-This configuration adds =~/.vimrc= to the runtime path /before/ the vim-plug block to remedy that:
-
-#+caption: =~/.vimrc=, adding the =~/.vim= directory to the runtime path
-#+begin_src vimrc :tangle .vimrc
-  " Add ~/.vim to the runtime path
-  set runtimepath +=~/.vim
+  
+To support NeoVim, symlink NeoVim's home directory and configuration file paths to Vim's:
+  
+#+begin_src shell
+  mkdir -p ~/.config/
+  ln -s ~/.vim ~/.config/nvim
+  ln -s ~/.vim/.vimrc ~/.config/nvim/init.vim
+  ln -s ~/.vim/.vimrc ~/.vimrc
 #+end_src
 
 #+RESULTS:
-
-[fn:unknown-plug] Failing to add =~/.vim= to the runtime path causes the following error when loading the rest of the configuration:
-
-#+begin_example
-Error detected while processing /Users/jeffkreeftmeijer/.config/nvim/init.vim:
-line   15:
-E117: Unknown function: plug#begin
-line   17:
-E492: Not an editor command: Plug 'sheerun/vim-polyglot'
-line   19:
-E117: Unknown function: plug#end
-Error detected while processing VimEnter Autocommands for "*":
-E121: Undefined variable: g:plugs
-Press ENTER or type command to continue
-#+end_example
 
 * Package management
 :PROPERTIES:
