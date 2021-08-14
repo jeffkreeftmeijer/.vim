@@ -187,6 +187,23 @@ To install a plugin, call the =Plug= function /inside/ the plug-block with an UR
 
 The =user/repository= assumes the plugin is hosted on GitHub.
 
+** Creating and restoring package snapshots
+:PROPERTIES:
+:CUSTOM_ID: creating-and-restoring-package-snapshots
+:END:
+
+To write a lock file based on the currently installed plugin versions, run =:PlugSnapshot ~/.vim/snapshot.vim= inside Vim.
+This creates a snapshot file in the specified path, which lists all installed plugins with their commit hashes.
+
+#+caption: =snapshot.vim=, showing this configuration's currently installed version revisions
+#+INCLUDE: "snapshot.vim" src vimrc
+
+To restore from a snapshot, source the snapshot file inside Vim:
+
+#+begin_example
+:source ~/.vim/snapshot.vim
+#+end_example
+
 * Clipboard
 :PROPERTIES:
 :CUSTOM_ID: clipboard
